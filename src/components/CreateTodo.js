@@ -10,6 +10,7 @@ export const CreateTodo = ({createTodo}) => {
         createTodo(title);
         setTitle('');
     };
+    
     return (
         <form onSubmit={handleSubmit}>
             <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} />

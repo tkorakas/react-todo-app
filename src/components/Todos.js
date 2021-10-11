@@ -10,13 +10,13 @@ export const Todos = ({todos, editingTodo}) => {
             <CreateTodo />
             <Filters />
             <ul>
-            {todos.map(todo => {
-                if (editingTodo === todo.id) {
-                    return <EditTodo key={todo.id} todo={todo} />
-                }
-                return <Todo key={todo.id} todo={todo} />
-            })}
-        </ul>
+                {todos.map(todo => {
+                    if (editingTodo === todo.id) {
+                        return <EditTodo key={todo.id} todo={todo} />
+                    }
+                    return <Todo key={todo.id} todo={todo} />
+                })}
+            </ul>
         </div>
     );
 }
@@ -24,7 +24,6 @@ export const Todos = ({todos, editingTodo}) => {
 export const withTodosData = (Component) => (props) => {
     const {todos, editingTodo} = useTodos();
 
-    console.log(todos);
     return <Component {...props} todos={todos} editingTodo={editingTodo} />
 }
 
